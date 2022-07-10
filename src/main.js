@@ -38,8 +38,8 @@ factory.then((car) => {
         } 
         setTimeout(() => {
             console.log(`Каркас створено - ${car}`);
+            res(car);
         }, 1000)
-        res(car);
     })
 })
 .then((car) => {
@@ -47,8 +47,8 @@ factory.then((car) => {
         car.motor = 1.6;
         setTimeout(() => {
             console.log(`Добавлено двигун з силою ${car.motor}`);
+            res(car);
         }, 1000);
-        res(car);
     })
 })
 .then((car) => {
@@ -56,8 +56,8 @@ factory.then((car) => {
         car.undercarriage = "4 колеса";
         setTimeout(() => {
             console.log(`Добавлена ходова частина в виді - ${car.undercarriage}`);
+            res(car);
         }, 1000)
-        res(car);
     })
 })
 .then(car => {
@@ -65,8 +65,8 @@ factory.then((car) => {
         car.carSeats = "4 сидіння";
         setTimeout(() => {
             console.log(`В автомобіль добавлено ${car.carSeats}`);
+            res(car);
         }, 1000);
-        res(car);
     })
 })
 .then(car => {
@@ -74,8 +74,15 @@ factory.then((car) => {
         car.color = "#ccc";
         setTimeout(() => {
             console.log("Створення автомобіля завершено");
+            res(car);
         }, 1000)
-        res(car);
+    })
+})
+.then(car => {
+    return new Promise (res => {
+        setTimeout(() => {
+            console.log(car);
+        }, 1000)
     })
 })
 
