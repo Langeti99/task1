@@ -4,12 +4,12 @@ const str = `Ще не вмерла Україна, і слава, і воля.
              Запануєм і ми, браття, у своїй сторонці. 
              Душу й тіло ми положим за нашу свободу. 
              І покажем, і ми, браття, козацького роду.`
-const str2 = "і ми"
+const str2 = "І МИ"
 const getSentense = (someText, searchSentense) => {
     const sentenseArray = someText.split('. ');
     const result = [];
     for(let i = 0; i < sentenseArray.length; i++) {
-        if(sentenseArray[i].includes(searchSentense)){
+        if(sentenseArray[i].toLowerCase().includes(searchSentense.toLowerCase())){
             result.push(sentenseArray[i].trim());
         }
     }
